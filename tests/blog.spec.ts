@@ -16,6 +16,7 @@ test("public reading, search, feeds, mobile and protected routes", async ({
   await page.getByRole("button", { name: "搜索", exact: true }).click();
   await expect(page.locator(".post-card")).toHaveCount(1);
   await page.locator(".post-card").click();
+  await expect(page).toHaveURL("/posts/server-components");
   await expect(page.locator(".prose h2").first()).toHaveText("明确职责");
   await page.goto("/?category=" + encodeURIComponent("设计观察"));
   await expect(page.locator(".post-card")).toHaveCount(1);
