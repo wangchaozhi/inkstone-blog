@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+*.db
+*.db-*
+!.env.example
+playwright-report/
+test-results/
